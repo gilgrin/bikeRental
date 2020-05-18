@@ -1,2 +1,9 @@
 <h1>Bikes#new</h1>
 <p>Find me in app/views/bikes/new.html.erb</p>
+
+<%= simple_form_for(bike) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <!-- [...] -->
+  <%= f.button :submit %>
+<% end %>

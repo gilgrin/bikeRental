@@ -1,2 +1,5 @@
 <h1>Bikes#show</h1>
 <p>Find me in app/views/bikes/show.html.erb</p>
+<% @bike.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
