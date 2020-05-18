@@ -1,6 +1,8 @@
 .navbar-lewagon {
+  color: white;
   justify-content: space-between;
-  background: white;
+  background-color: #293241;
+  transition: 0.5s background-color ease;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +11,57 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
+}
+
+.logo {
+  font-family: $logo-font;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.fa-biking {
+  color: #EF6C4D;
+  font-size: 35px;
+  margin-right: 8px;
+  margin-top: 5px;
+}
+
+.btn-search {
+  background-color: #98C1D9;
+
+  &:hover {
+    background-color: #E0FBFC;
+    transition: 0.2s ease;
+  }
+}
+
+
+.navbar-nav li a {
+  color: white !important;
+  font-family: $logo-font;
+  background-color: #444857;
+  // border: 1px solid black;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 0px 5px;
+
+  &:hover {
+    // border-bottom: 2px solid #EF6C4D;
+    background-color: #EF6C4D;
+    height: 100%;
+  }
+}
+
+.btn-login {
+  border: 1px solid white;
+  border-radius: 21px;
+
+  &:hover {
+    background-color: #EF6C4D;
+    transition: 0.2s ease;
+  }
 }
