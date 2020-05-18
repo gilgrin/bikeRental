@@ -1,0 +1,32 @@
+body {
+  font-family: $logo-font;
+  font-weight: lighter;
+}
+.form-box {
+  padding: 20px;
+  border-radius: 8px;
+  color: #2A3241;
+}
+
+.form-btn {
+  width:100%;
+  border-radius: 4px;
+  padding: 10px 15px;
+  background-color: #2A3241;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 5px;
+  &:hover {
+    background-color: #444857;
+    color: #ffffff;
+  }
+}
+
+.file-upload-button {
+  border-radius: 4px;
+  padding: 10px 15px;
+  background-color: #2A3241;
+  color: #ffffff;
+  font-weight: bold;
+}
+

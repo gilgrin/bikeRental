@@ -5,7 +5,7 @@ class BikesController < ApplicationController
   end
 
   def show
-    @bike = Bike.find(:id)
+    @bike = Bike.find(params[:id])
   end
 
   def new
@@ -14,15 +14,18 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bike_params)
-    @bike.user = @bike
+    @bike.user = current_user
     if @bike.save
-      redirect_to, bike_path
+      redirect_to @bike, notice: 'Bike was successfully created.'
     else
       render :new
+    end
   end
 
+private
+
   def bike_params
-    params.require(:bike).permit(:name, :color, :size, :category, :price, :equipment, :location, photos: [], :user_id)
+    params.require(:bike).permit(:name, :color, :size, :category, :price, :equipment, :location, photos: [])
   end
 
 end

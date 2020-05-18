@@ -1,0 +1,11 @@
+<%= simple_form_for(bike) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :color %>
+  <%= f.input :size %>
+  <%= f.input :category %>
+  <%= f.input :price %>
+  <%= f.input :equipment %>
+  <%= f.input :location %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.button :submit, "Add", class: "form-btn" %>
+<% end %>
