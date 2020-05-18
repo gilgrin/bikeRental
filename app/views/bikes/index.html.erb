@@ -1,2 +1,18 @@
-<h1>Bikes#index</h1>
-<p>Find me in app/views/bikes/index.html.erb</p>
+<div class="container">
+  <h1>Bikes for rent</h1>
+  <% @bikes.each do |bike| %>
+    <div class="bike-card">
+      <div class="card-img">
+      </div>
+      <div class="card-info">
+        <h1> <%= bike.name %> </h1>
+        <p> Color: <%= bike.color %> </p>
+        <p> Size: <%= bike.size %> </p>
+        <p> Category <%= bike.category %> </p>
+        <p> Price: $ <%= bike.price %> </p>
+        <p> Equipment: <%= bike.equipment %> </p>
+        <p> Location: <%= bike.location %> </p>
+      </div>
+    </div>
+  <% end %>
+</div>

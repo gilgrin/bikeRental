@@ -17,21 +17,51 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <!-- <a class="navbar-brand" href="#">Hidden brand</a> -->
     <ul class="navbar-nav mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/bikes/new">Rent Your Bike</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/bikes">Need A Bike?</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/users/sign_up">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link btn-login" href="/users/sign_in">Login</a>
-      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Rent Your Bike", "/bikes/new", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Need A Bike?", "/bikes", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign up", "/users/sign_up", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log in", new_user_session_path, class: "nav-link btn-login" %>
+        </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Home", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Messages", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Action", "#", class: "dropdown-item" %>
+            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
