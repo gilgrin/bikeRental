@@ -6,6 +6,4 @@ class User < ApplicationRecord
   has_many :rented_bikes, through: :rentals, source: :bike
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  validates :first_name, :last_name, presence: true
 end
