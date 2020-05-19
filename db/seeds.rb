@@ -12,3 +12,4 @@ require 'faker'
   new_user.save
 end
 
+puts 'Done.'
