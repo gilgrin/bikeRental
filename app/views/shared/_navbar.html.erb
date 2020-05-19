@@ -1,9 +1,18 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top align-items-center">
-    <%= link_to "/", class: "navbar-brand" do %>
-      <div class="d-flex">
-          <i class="fas fa-biking"></i>
-          <h1 class="logo">BikeRental</h1>
-      </div>
+    <% if user_signed_in? %>
+      <%= link_to "/dashboard", class: "navbar-brand" do %>
+        <div class="d-flex">
+            <i class="fas fa-biking"></i>
+            <h1 class="logo">BikeRental</h1>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to "/", class: "navbar-brand" do %>
+        <div class="d-flex">
+            <i class="fas fa-biking"></i>
+            <h1 class="logo">BikeRental</h1>
+        </div>
+      <% end %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
