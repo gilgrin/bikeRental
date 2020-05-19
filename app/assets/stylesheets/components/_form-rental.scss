@@ -1,0 +1,40 @@
+.form-rental {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 30px #cdc9c9;
+}
+
+.form-rental > form {
+  margin-bottom: 10px;
+}
+
+.form-rental > p {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 14px;
+  color: grey;
+}
+
+.form-rental > h5 {
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.btn-submit-rent {
+  color: white;
+  background-color: #2ebd3f;
+  font-weight: bold;
+  width: 100%;
+  border: 0;
+  padding: 10px;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: #188d26;
+  }
+}
+
+.form-rental-price .price-section, .total-section {
+  display: flex;
+  justify-content: space-between;
+}
