@@ -52,8 +52,20 @@
       <div class="form-rental">
         <%= simple_form_for [@bike, @rental] do |f| %>
           <%= f.input :date %>
-          <%= f.submit "Rent Now", class: "btn-submit-rent" %>
+          <%= f.submit "Reserve", class: "btn-submit-rent" %>
         <% end %>
+        <p>You won't be charged yet</p>
+        <div class="form-rental-price">
+          <div class="price-section">
+            <h5>Price</h5>
+            <h5><%= @bike.price %>$</h5>
+          </div>
+          <hr>
+          <div class="total-section">
+            <h5>Total</h5>
+            <h5><%= @bike.price %>$</h5>
+          </div>
+        </div>
       </div>
     </div>
   </div>
