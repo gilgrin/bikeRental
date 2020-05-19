@@ -1,19 +1,19 @@
 <div class="container">
   <h1>Bikes for rent</h1>
   <% @bikes.each do |bike| %>
-    <div class="bike-card">
+    <div class="bike-card bg-white mt-3">
       <div class="card-img">
       </div>
       <%= link_to bike_path(bike) do %>
-      <div class="card-info">
-        <h1> <%= bike.name %> </h1>
-        <p> Color: <%= bike.color %> </p>
-        <p> Size: <%= bike.size %> </p>
-        <p> Category <%= bike.category %> </p>
-        <p> Price: $ <%= bike.price %> </p>
-        <p> Equipment: <%= bike.equipment %> </p>
-        <p> Location: <%= bike.location %> </p>
-      </div>
+        <div class="card-info p-5">
+          <h1> <%= bike.name %> </h1>
+          <p> Color: <%= bike.color %> </p>
+          <p> Size: <%= bike.size %> </p>
+          <p> Category <%= bike.category %> </p>
+          <p> Price: $ <%= bike.price %> </p>
+          <p> Equipment: <%= bike.equipment %> </p>
+          <p> Location: <%= bike.location %> </p>
+        </div>
       <% end %>
     </div>
   <% end %>
