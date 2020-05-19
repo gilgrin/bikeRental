@@ -1,0 +1,66 @@
+.bike-name {
+  font-family: $logo-font;
+}
+
+.location-share-save {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-share-save > a {
+  color: grey;
+  border-bottom: 2px solid;
+}
+
+.location-share-save .fas {
+  margin-right: 5px;
+}
+
+.links-share-save {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links-share-save .fas {
+  font-size: 14px;
+  padding-top: 5px;
+  color: black;
+}
+
+.btn-share, .btn-save {
+  display: flex;
+  margin-left: 10px;
+  padding: 6px;
+  color: black;
+
+  &:hover {
+    background-color: #ebeae8;
+    border-radius: 8px;
+    color: black;
+  }
+
+  .link-text {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 2px solid;
+  }
+}
+
+.bike-container a {
+  // color: grey;
+  text-decoration: none;
+}
+
+.bike-container {
+  min-height: 80vh;
+}
+
+.info-and-rental-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-and-rental-form .fas {
+  width: 20px;
+}

@@ -8,8 +8,8 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  user = User.new(email: Faker::Internet.email, password:'123456', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-  user.save!
+  new_user = User.new(email: Faker::Internet.email, password:'123456', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+  new_user.save
 end
 
 puts 'Done.'
