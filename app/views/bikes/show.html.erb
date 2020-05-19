@@ -1,6 +1,60 @@
-<h1>Bikes#show</h1>
-
-<p>Find me in app/views/bikes/show.html.erb</p>
 <% @bike.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+
+<div class="container">
+  <div class="bike-container">
+    <h1 class="bike-name"><%= @bike.name %></h1>
+    <div class="location-share-save">
+      <%= link_to "#{@bike.location}", bike_path(@bike) %>
+      <div class="links-share-save">
+        <%= link_to bike_path(@bike), class: "btn-share" do %>
+          <i class="fas fa-share-square"></i>
+          <p class="link-text">Share</p>
+        <% end %>
+        <%= link_to bike_path(@bike), class: "btn-save" do %>
+          <i class="fas fa-heart"></i>
+          <p class="link-text">Save</p>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+
+    <div class="bike-show-imgs">
+    </div>
+    <hr>
+
+    <div class="info-and-rental-form">
+      <div class="info">
+        <h6>
+          <i class="fas fa-swatchbook"></i>
+          Color: <%= @bike.color %>
+        </h6>
+        <h6>
+          <i class="fas fa-ruler-horizontal"></i>
+          Size: <%= @bike.size %>
+        </h6>
+        <h6>
+          <i class="fas fa-bicycle"></i>
+          Category: <%= @bike.category %>
+        </h6>
+        <h6>
+          <i class="fas fa-tools"></i>
+          Equipment: <%= @bike.equipment %>
+        </h6>
+        <h6>
+          <i class="fas fa-map-marker-alt"></i>
+          Location: <%= @bike.location %>
+        </h6>
+        <%= link_to "Contact owner", bike_path(@bike) %>
+      </div>
+
+      <div class="form-rental">
+        <%= simple_form_for [@bike, @rental] do |f| %>
+          <%= f.input :date %>
+          <%= f.submit "Rent Now", class: "btn-submit-rent" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
