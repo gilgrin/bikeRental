@@ -2,7 +2,7 @@
   <%= f.input :name %>
   <%= f.input :color %>
   <%= f.input :size %>
-  <%= f.input :category %>
+  <%= f.input :category, collection: Bike::BIKE_CATEGORIES %>
   <%= f.input :price %>
   <%= f.input :equipment %>
   <%= f.input :location %>
