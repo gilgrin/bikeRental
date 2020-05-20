@@ -3,10 +3,10 @@
   <% @bikes.each do |bike| %>
     <div class="bike-card bg-white mt-3">
       <div class="card-img">
-        <% if bike.photos.length == 0 %>
-          <%= image_tag "default_img.png" %>
-        <% else %>
+        <% if bike.photos.attached? %>
           <%= cl_image_tag bike.photos.first.key, width: 300 %>
+        <% else %>
+          <%= image_tag "default_img.png" %>
         <% end %>
       </div>
       <%= link_to bike_path(bike) do %>

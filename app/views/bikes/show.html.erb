@@ -18,14 +18,16 @@
 
     <div class="info-and-rental-form">
       <div class="info-and-imgs">
-        <div class="bike-show-imgs">
-          <% if @bike.photos.length == 0 %>
-            <%= image_tag "default_img.png", height: '100%', width: 400, class: "bike-img" %>
-          <% else %>
-            <% @bike.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "bike-img" %>
+        <div class="bike-img-container">
+            <% if @bike.photos.attached? %>
+              <%# @bike.photos.each do |photo| %>
+              <div class="bike-show-imgs" style="background-image: url('<%= cl_image_path @bike.photos.first.key %>')">
+              </div>
+              <%# end %>
+            <% else %>
+              <div class="bike-show-imgs" style="background-image: url('<%= image_path "default_img.png" %>')">
+              </div>
             <% end %>
-          <% end %>
         </div>
         <hr>
         <div class="info">
