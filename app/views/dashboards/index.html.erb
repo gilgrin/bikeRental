@@ -9,7 +9,6 @@
       <h2>Rented bikes</h2>
       <%current_user.rentals.each do |rental| %>
       <div class="bike-card bg-white mt-3">
-
             <div class="card-info p-5">
               <h1> <%= rental.bike.name %> </h1>
               <p> User: <%= rental.user.first_name %> </p>
@@ -23,7 +22,11 @@
       <% current_user.bikes.each do |bike| %>
         <div class="bike-card bg-white mt-3">
           <div class="card-img">
-            <%= cl_image_tag bike.photos.first.key, width: 300 %>
+            <% if bike.photos.length == 0 %>
+              <%= image_tag "default_img.png" %>
+            <% else %>
+              <%= cl_image_tag bike.photos.first.key, width: 300 %>
+            <% end %>
           </div>
             <div class="card-info p-5">
               <h1> <%= bike.name %> </h1>
