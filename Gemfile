@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'pg_search', '~> 2.3.0'
+
 gem 'cloudinary', '~> 1.12.0'
 
 # Use Active Storage variant
