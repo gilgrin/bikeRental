@@ -2,12 +2,17 @@
   <div class="container">
     <div class="row justify-content-center">
       <h1>Explore Your Destination</h1>
-      <div class="text-align-center">
-        <form class="form-inline my-2 my-lg-0 justify-content-center form-search-location" tabindex="1">
-          <input class="form-control mr-sm-2" type="search" placeholder="Enter location" aria-label="Search">
-          <button class="btn btn-search my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
+
+      <%= form_tag root_path, method: :get, class: "form-search-location" do %>
+        <div class="search-box">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search by location, name, category or price"
+          %>
+          <%= submit_tag "Search", class: "btn btn-search" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
