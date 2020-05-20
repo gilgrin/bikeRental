@@ -5,7 +5,7 @@ class RentalsController < ApplicationController
     @rental.bike = @bike
     @rental.user = current_user
     if @rental.save
-      redirect_to root_path, notice: 'Rental was successfully created.'
+      redirect_to dashboard_path, notice: 'Rental was successfully created.'
     else
       render "bikes/show"
     end

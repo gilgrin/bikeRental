@@ -1,6 +1,8 @@
 .banner {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-size: cover;
   background-position: center;
   padding: 250px 0;
@@ -9,28 +11,56 @@
 }
 
 .banner h1 {
-  margin: 0;
+  // margin: 0;
   // color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: lighter;
   font-size: 76px;
-  font-family: 'Pacifico', cursive;
+  font-family: $logo-font;
   font-weight: bold;
   color: #fff;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #fff,
-    0 0 40px #0ff,
-    0 0 80px #0ff,
-    0 0 90px #0ff,
-    0 0 100px #0ff,
-    0 0 150px #0ff;
+  opacity: 0.8;
 }
 
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.banner .form-search-location {
+  display: flex;
+  align-items: start;
+  width: 900px;
+  border-radius: 20px;
+  transition: 0.2s ease;
+
+  &:hover {
+    box-shadow: 1px 1px 30px white;
+  }
+}
+
+.banner .btn-search {
+  margin-left: -145px;
+  border-radius: 20px;
+  height: 52px;
+  width: 181px;
+  z-index: 1;
+  letter-spacing: 2px;
+
+  &:hover {
+    background-color: #6A8AA0;
+  }
+}
+.banner .form-control {
+  border-radius: 20px;
+  padding-left: 16px;
+  height: 52px;
+  width: 856px;
+  opacity: 0.9;
+  background-color: white;
+  box-shadow: 0px 0px 30px rgba(0,0,0,1.2);
+  letter-spacing: 2px;
+}
+
+.banner > .container {
+  height: 300px;
+}
+
+.banner .row {
+  height: 160px;
 }

@@ -18,8 +18,14 @@
 
 .list-icons > li {
   display: inline-block;
-  color: white;
+  // color: white;
   margin-right: 10px;
+}
+
+.list-icons .fab {
+  // display: inline-block;
+  color: #EE6C4D;
+  // margin-right: 10px;
 }
 
 .footer .fab {
@@ -31,12 +37,16 @@
   justify-content: space-around;
   align-items: center;
   margin-top: 30px;
+
+  .pipe-grey {
+    color: grey;
+  }
 }
 
 .footer-links > a {
   display: inline-block;
   color: white;
-  padding-right: 40px;
+  // padding-right: 40px;
 
   &:hover {
     color: lightgrey;
@@ -44,7 +54,7 @@
 }
 
 .right-border-positive {
-  border-right: 2px solid lightgrey;
+  // border-right: 2px solid lightgrey;
 }
 
 .copyright-info {
