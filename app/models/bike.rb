@@ -6,4 +6,11 @@ class Bike < ApplicationRecord
 
   validates :name, :category, :price, :location, :user_id, presence: true
   validates :category, inclusion: { in: BIKE_CATEGORIES }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_location_and_category_and_price,
+    against: { location: 'A', name: 'B', category: 'C', price: 'D' },
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end

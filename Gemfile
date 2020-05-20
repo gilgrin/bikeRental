@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
-gem 'faker'
 gem 'devise'
 gem 'faker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -26,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'pg_search', '~> 2.3.0'
 
 gem 'cloudinary', '~> 1.12.0'
 

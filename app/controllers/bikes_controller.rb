@@ -1,7 +1,11 @@
 class BikesController < ApplicationController
 
   def index
-    @bikes = Bike.all
+    if params[:query].present?
+      @bikes = Bike.search_by_location_and_category_and_price(params[:query])
+    else
+      @bikes = Bike.all
+    end
   end
 
   def show
@@ -29,5 +33,4 @@ private
   def bike_params
     params.require(:bike).permit(:name, :color, :size, :category, :price, :equipment, :location, photos: [])
   end
-
 end
