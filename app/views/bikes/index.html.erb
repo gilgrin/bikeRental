@@ -3,7 +3,11 @@
   <% @bikes.each do |bike| %>
     <div class="bike-card bg-white mt-3">
       <div class="card-img">
-        <%= cl_image_tag bike.photos.first.key, width: 300 %>
+        <% if bike.photos.length == 0 %>
+          <%= image_tag "default_img.png" %>
+        <% else %>
+          <%= cl_image_tag bike.photos.first.key, width: 300 %>
+        <% end %>
       </div>
       <%= link_to bike_path(bike) do %>
         <div class="card-info p-5">

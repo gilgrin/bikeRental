@@ -19,8 +19,12 @@
     <div class="info-and-rental-form">
       <div class="info-and-imgs">
         <div class="bike-show-imgs">
-          <% @bike.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "bike-img" %>
+          <% if @bike.photos.length == 0 %>
+            <%= image_tag "default_img.png", height: '100%', width: 400, class: "bike-img" %>
+          <% else %>
+            <% @bike.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "bike-img" %>
+            <% end %>
           <% end %>
         </div>
         <hr>

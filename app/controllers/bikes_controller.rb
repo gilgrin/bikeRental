@@ -29,5 +29,4 @@ private
   def bike_params
     params.require(:bike).permit(:name, :color, :size, :category, :price, :equipment, :location, photos: [])
   end
-
 end
