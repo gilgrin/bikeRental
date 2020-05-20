@@ -22,7 +22,7 @@ class BikesController < ApplicationController
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save
-      redirect_to @bike, notice: 'Bike was successfully created.'
+      redirect_to user_root_path, notice: 'Bike was successfully created.'
     else
       render :new
     end
