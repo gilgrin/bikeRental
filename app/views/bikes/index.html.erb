@@ -3,17 +3,17 @@
   <% @bikes.each do |bike| %>
     <div class="bike-card bg-white mt-3">
       <div class="card-img">
-        <%= cl_image_tag bike.photos.first.key, width: 300 %>
+        <%= cl_image_tag bike.photos.first.key %>
       </div>
       <%= link_to bike_path(bike) do %>
         <div class="card-info p-5">
           <h1> <%= bike.name %> </h1>
-          <p> Color: <%= bike.color %> </p>
-          <p> Size: <%= bike.size %> </p>
           <p> Category <%= bike.category %> </p>
           <p> Price: $ <%= bike.price %> </p>
-          <p> Equipment: <%= bike.equipment %> </p>
-          <p> Location: <%= bike.location %> </p>
+          <p>            
+            <i class="fas fa-map-marker-alt"></i>
+            Location: <%= bike.location %> 
+          </p>
         </div>
       <% end %>
     </div>
