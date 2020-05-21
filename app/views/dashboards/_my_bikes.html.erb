@@ -5,7 +5,11 @@
     <% current_user.bikes.each do |bike| %>
       <div class="bike-card bg-white mt-3">
         <div class="card-img">
-          <%= cl_image_tag bike.photos.first.key, width: 300 %>
+          <% if bike.photos.attached? %>
+              <%= cl_image_tag bike.photos.first.key, width: 300 %>
+            <% else %>
+              <%= image_tag "default_img.png" %>
+          <% end %>
         </div>
           <div class="card-info p-5">
             <h1> <%= bike.name %> </h1>
