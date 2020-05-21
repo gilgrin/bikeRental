@@ -27,3 +27,15 @@
 .banner .row {
   height: 160px;
 }
+
+.banner .btn-login {
+  padding: 10px 70px;
+  background-color: #E0FBFC;
+  opacity: 0.8;
+  font-size: 36px;
+  color: black;
+
+  &:hover {
+    background-color: #B3CACB;
+  }
+}

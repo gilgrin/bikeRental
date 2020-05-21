@@ -3,4 +3,5 @@ class Rental < ApplicationRecord
   belongs_to :user
 
   validates :bike_id, :user_id, :date, presence: true
+  validates :bike, uniqueness: true
 end
