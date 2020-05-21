@@ -34,6 +34,16 @@
   }
 }
 
+.btn-submit-rented {
+  color: white;
+  background-color: grey;
+  font-weight: bold;
+  width: 100%;
+  border: 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
 .form-rental-price .price-section, .total-section {
   display: flex;
   justify-content: space-between;

@@ -31,6 +31,9 @@
         </div>
         <hr>
         <div class="info">
+          <% if @bike.rentals.any? %>
+            <p class="rented">This bike is rented</p>
+          <% end %>
           <h6>
             <i class="fas fa-swatchbook"></i>
             Color: <%= @bike.color %>
@@ -55,9 +58,10 @@
         </div>
       </div>
 
+      <% if @bike.rentals.blank? %>
       <div class="form-rental">
         <%= simple_form_for [@bike, @rental] do |f| %>
-          <%= f.input :date %>
+          <%= f.input :date, as: :string, input_html: { class: 'datepicker' } %>
           <%= f.submit "Reserve", class: "btn-submit-rent" %>
         <% end %>
         <p>You won't be charged yet</p>
@@ -73,6 +77,7 @@
           </div>
         </div>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

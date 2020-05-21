@@ -1,18 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.ldscdn.org/images/media-library/missionary/sister-missionaries-956170-wallpaper.jpg?download=true);">
   <div class="container">
-    <div class="row justify-content-center">
-      <h1>Explore Your Destination</h1>
-
-      <%= form_tag root_path, method: :get, class: "form-search-location" do %>
-        <div class="search-box">
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search by location, name, category or price"
-          %>
-          <%= submit_tag "Search", class: "btn btn-search" %>
-        </div>
-      <% end %>
+    <h1>Explore Your Destination</h1>
+    <div><%= link_to "Log in", new_user_session_path, class: "btn btn-login" %></div>
     </div>
   </div>
 </div>
