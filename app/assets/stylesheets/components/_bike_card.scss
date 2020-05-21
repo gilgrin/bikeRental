@@ -1,19 +1,43 @@
-// .bike-card {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//  }
-
-.bike-card h1 {
-  font-size: 16px;
-  font-weight: bold;
+*{
   margin: 0;
+  padding: 0;
+  background-origin: border-box;
 }
 
-.bike-card p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+.product-card{
+  width: 400px;
+  height: 200%;
+  padding: 40px;
+  background: white;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2)
+}
+
+.card-img-container{
+  
+}
+
+
+.info-ccontainer{
+  display: flex;
+  position: sticky;
+}
+
+.upper-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-info{
+  // position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  font-weight: bold;
+  margin: 0;
 }
