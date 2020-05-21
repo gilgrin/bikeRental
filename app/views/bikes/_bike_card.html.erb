@@ -1,11 +1,8 @@
-<div class="my-bikes">
-  <span class="db-col-title"> My Bikes </span>
-  <span class="db-count"> <%= current_user.bikes.length %> Bikes </span>
-  <% if current_user.bikes.any? %>
-    <% current_user.bikes.each do |bike| %>
+<div class="bike-card-index">
+  <% @bikes.each do |bike| %>
     <div class="bike-card">
       <%= link_to bike_path(bike) do %>
-      <div class="db-bike-card-img">
+      <div class="bike-card-img">
           <%= cl_image_tag bike.photos.first.key %>
       </div>
         <div class="bike-card-info">
@@ -24,17 +21,6 @@
         </div>
         </div>
       <% end %>
-    </div>
-  <% end %>
-  <% else %>
-    <div class="rental-card">
-      <div class="rental-img">
-        <i class="fas fa-biking"></i>
-      </div>
-      <div class="rental-info">
-        <p> You have not added any bikes yet </p>
-        <%= link_to "Add a bike", new_bike_path %>
-      </div>
     </div>
   <% end %>
 </div>

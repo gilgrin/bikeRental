@@ -1,33 +1,10 @@
-<main>  
-  <!-- <h1>Bikes for rent</h1> -->
-  <% @bikes.each do |bike| %>
-
-    <div class="product-card">
-      <%= link_to bike_path(bike) do %>
-      <div class="card-img-container">
-        <div class="card-img">
-          <%= cl_image_tag bike.photos.first.key %>
-        </div>
-      </div>        
-        <div class="info-container">
-          <div class="upper-info">
-            <div class="title">
-              <h1> <%= bike.name %> </h1>
-            </div> 
-            <p class="price"> $<%= bike.price %></p>   
-          </div>
-          
-          <div class="card-info">
-  
-            <p class="category">Category <%= bike.category %></p>             
-            <p class="location">            
-              <i class="fas fa-map-marker-alt"></i>
-              <%= bike.location %> 
-            </p> 
-        </div>       
-        </div>
-      <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-6 offset-xl-3 ">
+      <div class="dashboard">
+        <h1>Bikes for Rent</h1>
+        <%= render "bike_card" %>
+      </div>
     </div>
-  <% end %>  
-</main>
-
+  </div>
+</div>

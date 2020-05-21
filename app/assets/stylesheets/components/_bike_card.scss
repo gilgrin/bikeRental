@@ -1,34 +1,75 @@
-*{
+
+.bike-card a {
+    text-decoration: none;
+    color: #2A3241;
+  }
+
+.bike-card-index  {
   margin: 0;
   padding: 0;
   background-origin: border-box;
+  display: flex;
+  justify-content: space-between;
 }
 
-.product-card{
-  width: 400px;
-  height: 200%;
-  padding: 40px;
+.bike-card{
+  border-radius: 6px;
+  background-color: #ffffff;
+  width: 300px;
   background: white;
   display: flex;
   overflow: hidden;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2)
+  margin: 15px 0px;
+  &:hover {
+    border: 3px solid #B4D5EC;
+  }
 }
 
-.card-img-container{
-  
+
+.bike-card-img img {
+  width: 300px;
+  height: 250px;
+ border-radius: 6px 6px 0px 0px;
+ &:hover {
+  opacity: 0.5;
+ }
+}
+
+.db-bike-card-img img {
+ width: 300px;
+ border-radius: 6px 6px 0px 0px;
 }
 
 
-.info-ccontainer{
-  display: flex;
+
+.botton-hover {
+  border: 3px solid #035AC1;
+  border-radius: 6px;
+  width: 200px;
+  text-align: center;
+  padding: 15px 0px;
+  margin-left: 50px;
+  position: relative;
+  top: 130px;
+  display: none;
+  & h4{
+    font-size: 16px;
+    font-weight: bold;
+    color: #035AC1;
+  }
+}
+
+.bike-card-info{
   position: sticky;
+  padding:20px 15px 10px;
 }
 
 .upper-info{
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
+  margin-bottom: 6px;
 }
 
 .card-info{
@@ -40,4 +81,28 @@
 .title{
   font-weight: bold;
   margin: 0;
+}
+ // card text
+
+.price {
+  color: #035AC1;
+}
+
+.category {
+  margin: 0px;
+}
+
+.title h1 {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.bottom-info p {
+  font-family: $body-font;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.category {
+  color: #035AC1;
 }
