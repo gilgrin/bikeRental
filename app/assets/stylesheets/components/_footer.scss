@@ -14,6 +14,7 @@
 .list-icons {
   list-style: none;
   padding-left: 0px;
+  margin-bottom: 0px;
 }
 
 .list-icons > li {
@@ -29,14 +30,14 @@
 }
 
 .footer .fab {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .footer-links {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 15px;
 
   .pipe-grey {
     color: grey;
@@ -65,4 +66,5 @@
 .footer hr {
   border: 1px solid grey;
   color: white;
+  margin-bottom: 8px
 }

@@ -4,7 +4,7 @@
   height: 170px;
   margin-top: 10px;
   margin-bottom: 15px;
-  background-color: #98C1D9;
+  background-color: #C3E7FF;
   border-radius: 4px;
   padding: 15px 20px;
       & h2 {
@@ -29,5 +29,26 @@
     font-width: regular;
     color: #2A3241;
     font-size: 18px;
+  }
+}
+
+
+@media(max-width: 768px) {
+  .welcome-img img {
+  height: 150px;
+  bottom: 40px;
+  right: 10px;
+}
+ .welcome-text {
+  padding-top: 18px;
+  & p {
+    width: 250px;
+    font-size: 16px;
+  }
+}
+
+.welcome-text h2 {
+  font-size: 24px;
+  padding-top: 15px;
   }
 }
