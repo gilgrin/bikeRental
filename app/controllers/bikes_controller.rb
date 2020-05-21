@@ -1,7 +1,11 @@
 class BikesController < ApplicationController
 
   def index
-    @bikes = Bike.all
+    if params[:query].present?
+      @bikes = Bike.search_by_location_and_category_and_price(params[:query])
+    else
+      @bikes = Bike.all
+    end
   end
 
   def show
@@ -18,7 +22,7 @@ class BikesController < ApplicationController
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save
-      redirect_to @bike, notice: 'Bike was successfully created.'
+      redirect_to user_root_path, notice: 'Bike was successfully created.'
     else
       render :new
     end
@@ -29,5 +33,4 @@ private
   def bike_params
     params.require(:bike).permit(:name, :color, :size, :category, :price, :equipment, :location, photos: [])
   end
-
 end

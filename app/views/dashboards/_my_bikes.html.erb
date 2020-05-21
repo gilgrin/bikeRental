@@ -1,0 +1,36 @@
+<div class="my-bikes">
+  <span class="db-col-title"> My Bikes </span>
+  <span class="db-count"> <%= current_user.bikes.length %> Bikes </span>
+  <% if current_user.bikes.any? %>
+    <% current_user.bikes.each do |bike| %>
+      <div class="bike-card bg-white mt-3">
+        <div class="card-img">
+          <% if bike.photos.attached? %>
+              <%= cl_image_tag bike.photos.first.key, width: 300 %>
+            <% else %>
+              <%= image_tag "default_img.png" %>
+          <% end %>
+        </div>
+          <div class="card-info p-5">
+            <h1> <%= bike.name %> </h1>
+            <p> Color: <%= bike.color %> </p>
+            <p> Size: <%= bike.size %> </p>
+            <p> Category <%= bike.category %> </p>
+            <p> Price: $ <%= bike.price %> </p>
+            <p> Equipment: <%= bike.equipment %> </p>
+            <p> Location: <%= bike.location %> </p>
+          </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="rental-card">
+      <div class="rental-img">
+        <i class="fas fa-biking"></i>
+      </div>
+      <div class="rental-info">
+        <p> You have not added any bikes yet </p>
+        <%= link_to "Add a bike", new_bike_path %>
+      </div>
+    </div>
+  <% end %>
+</div>

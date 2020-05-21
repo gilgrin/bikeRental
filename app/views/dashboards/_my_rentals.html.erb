@@ -1,0 +1,29 @@
+<div class="my-rentals">
+  <span class="db-col-title"> My Rentals </span>
+  <span class="db-count"> <%= current_user.rentals.length %> Rentals </span>
+  <% if current_user.rentals.any? %>
+    <%current_user.rentals.each do |rental| %>
+       <div class="rental-card">
+        <div class="rental-img">
+          <h3> <%= rental.bike.name.capitalize %> </h3>
+        </div>
+        <div class="rental-info">
+          <p> Rented from: <%= rental.bike.user.first_name.capitalize %> </br>
+           Date: <%= rental.date %> </br>
+           Price: $<%= rental.bike.price %>
+         </P>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+  <div class="rental-card">
+    <div class="rental-img">
+      <i class="fas fa-biking"></i>
+    </div>
+    <div class="rental-info">
+      <p> You have not rented any bikes yet </p>
+      <%= link_to "Rent a bike", bikes_path %>
+    </div>
+  </div>
+  <% end %>
+</div>

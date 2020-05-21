@@ -1,6 +1,7 @@
 <main>  
   <!-- <h1>Bikes for rent</h1> -->
   <% @bikes.each do |bike| %>
+
     <div class="product-card">
       <%= link_to bike_path(bike) do %>
       <div class="card-img-container">

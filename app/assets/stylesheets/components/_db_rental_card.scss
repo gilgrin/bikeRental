@@ -1,0 +1,33 @@
+.rental-card {
+  border-radius: 6px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 15px;
+  height: 155px;
+}
+.rental-img {
+  text-align: center;
+  margin-bottom: 10px;
+  & i {
+    color: #2A3241;
+  }
+}
+
+.rental-img h3 {
+  font-family: $logo-font;
+}
+.rental-info {
+  text-align: center;
+  & h3 {
+    font-size: 18px;
+    color: #2A3241;
+    font-family: $logo-font;
+  }
+}
+
+.rental-info p {
+  font-family: $body-font;
+  font-size: 16px;
+  margin-bottom: 0;
+  color: #2A3241;
+}

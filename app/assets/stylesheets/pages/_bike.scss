@@ -52,7 +52,6 @@
 }
 
 .bike-container {
-
   min-height: 80vh;
 }
 
@@ -65,14 +64,27 @@
   width: 20px;
 }
 
-.bike-show-imgs {
-  text-align: center;
-  background-image: cover;
+.bike-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
 }
 
-.bike-img {
+.bike-show-imgs {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 400px;
+  height: 300px;
   border-radius: 8px;
   box-shadow: 0px 0px 30px #cdc9c9;
+
+  img {
+    max-height: 100%;
+    padding: 8px;
+    max-width: 100%;
+  }
 }
 
 .info-and-imgs {

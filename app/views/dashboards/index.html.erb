@@ -1,41 +1,18 @@
 <div class="container">
-  <div class="welcom-card">
-    <h2>Welcome back <%= current_user.first_name %>!</h2>
-    <p>This is your dashboard here you can see all information about your bikes </br>
-      You have <%= current_user.bikes.length %> bikes and <%= current_user.rentals.length %> rented right now</p>
-  </div>
   <div class="dashboard">
-    <div class="rented-bikes">
-      <h2>Rented bikes</h2>
-      <%current_user.rentals.each do |rental| %>
-      <div class="bike-card bg-white mt-3">
-
-            <div class="card-info p-5">
-              <h1> <%= rental.bike.name %> </h1>
-              <p> User: <%= rental.user.first_name %> </p>
-              <P> Date: <%= rental.date %> </P>
-            </div>
-        </div>
-      <% end %>
+    <h1>Dashboard</h1>
+    <div class="welcome-card">
+      <div class="welcome-text">
+      <h2>Welcome back <%= current_user.first_name %>!</h2>
+      <p>This is your Dashboard here you can see all </br> Information about your Bikes and Rentals. </p>
     </div>
-    <div class="my-bikes">
-      <h2>Your bikes</h2>
-      <% current_user.bikes.each do |bike| %>
-        <div class="bike-card bg-white mt-3">
-          <div class="card-img">
-            <%= cl_image_tag bike.photos.first.key, width: 300 %>
-          </div>
-            <div class="card-info p-5">
-              <h1> <%= bike.name %> </h1>
-              <p> Color: <%= bike.color %> </p>
-              <p> Size: <%= bike.size %> </p>
-              <p> Category <%= bike.category %> </p>
-              <p> Price: $ <%= bike.price %> </p>
-              <p> Equipment: <%= bike.equipment %> </p>
-              <p> Location: <%= bike.location %> </p>
-            </div>
-        </div>
-      <% end %>
+    <div class="welcome-img">
+      <%= image_tag("bike-il.svg") %>
+    </div>
+      </div>
+    <div class="dashboard-content">
+      <%= render "my_rentals" %>
+      <%= render "my_bikes" %>
     </div>
   </div>
 </div>

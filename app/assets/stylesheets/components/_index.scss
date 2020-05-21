@@ -1,9 +1,16 @@
 // Import your components CSS files here.
 @import "alert";
-@import "avatar";
-@import "banner";
-@import "bike_card";
+@import "navbar";
 @import "footer";
+@import "banner";
+@import "avatar";
+@import "bike_card";
+// FORMS
 @import "form";
 @import "form-rental";
-@import "navbar";
+@import "form-search";
+@import "form_devise";
+// DASHBOARD
+@import "db_rental_card";
+@import "db_welcome_card";
+
